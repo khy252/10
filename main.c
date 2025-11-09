@@ -3,11 +3,25 @@
 
 int main(int argc, char *argv[])
 { 
-    char str[30] = "happy C programming";
+    char input[100];
+    FILE* fp;
+    int i;
 
+    // open
+    fp = fopen("sample.txt", "w");
 
-    printf("string %s length : %i\n", str, strlen(str) );
-    system("PAUSE");	
+    for (i=0; i<3; i++)
+    {
+        // fprintf
+        printf("input a word: ");
+        scanf("%s", input);
+        fprintf(fp, "%s\n", input);
+    }
+    
+    //fclose
+    fclose(fp);
+
+    system("PAUSE");
     return 0;
 }
   
